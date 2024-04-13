@@ -1,0 +1,15 @@
+
+.taxCalculator{
+   border: 1px solid black;
+    margin: 10% auto; 
+    padding: 10px;
+    height: 50vh;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+input{
+    width: 80%;
+}
