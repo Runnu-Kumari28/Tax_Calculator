@@ -1,15 +1,14 @@
 
 .taxCalculator{
-   border: 1px solid black;
+   /* border: 1px solid rgb(202, 221, 250); */
     margin: 10% auto; 
-    padding: 10px;
-    height: 50vh;
+    padding: 30px;
+    height: auto;
     width: 50vw;
+    gap: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-input{
-    width: 80%;
+    text-wrap: wrap;
 }

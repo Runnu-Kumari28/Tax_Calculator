@@ -3,21 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="./main.css">
     <title>Document</title>
 
 </head>
 <body>
-    <form class="taxCalculator">
-       <label for="gross_annual_income">Enter gross annual income</label><br>
-       <input type="number" id="gross_annual_income" name="gross_annual_income" placeholder="Enter gross annual income"><br>
-       <label for="extra_income">Enter extra income</label><br>
-       <input type="number" id="extra_income" name="extra_income" placeholder="Enter extra income from other sources"><br>
-       <label for="age_group">Enter age group</label><br>
-       <input type="number" id="age_group" name="age_group" ><br>
-       <label for="applicable_deductions">Enter total applicable deductions</label><br>
-       <input type="number" id="applicable_deductions" name="applicable_deductions" placeholder="Add total applicable deductions"><br>
-       <input type="button" id="Submit_button" value="Submit"><br>
+    <nav class="navbar navbar-expand-lg navbar-light bg-info">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">FYLE</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+    </nav>
+    <form class="taxCalculator border border-info rounded-start">  
+        <div class="form-group w-75">
+            <label for="gross_annual_income" class="form-label">Enter gross annual income</label>
+            <input type="number" id="gross_annual_income" class="form-control w-100" name="gross_annual_income" placeholder="Enter gross annual income">
+       </div>
+       <div class="form-group w-75">
+            <label for="extra_income" class="form-label">Enter extra income</label>
+            <input type="number" id="extra_income" class="form-control w-100" name="extra_income" placeholder="Enter extra income from other sources">
+       </div>
+       <div class="form-group w-75">
+            <label for="age_group" class="form-label">Enter age group</label>
+            <input type="number" id="age_group" class="form-control w-100" name="age_group" >
+       </div>
+       <div class="form-group w-75">
+            <label for="applicable_deductions" class="form-label">Enter total applicable deductions</label>
+            <input type="number" id="applicable_deductions" class="form-control w-100" name="applicable_deductions" placeholder="Add total applicable deductions">
+       </div> 
+       <button type="submit" class="btn btn-primary w-75">Submit</button>
     </form>
 </body>
 </html>
