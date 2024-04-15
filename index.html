@@ -22,67 +22,60 @@
         </div>
     </nav>
 
-            <!-- Form for userinput to calculate tax -->
-
-    <form class="taxCalculator border border-info rounded-start needs-validation" novalidate>  
-        
+    <!-- Form for userinput to calculate tax -->
+    <form id="taxCalculator" class="border border-info rounded needs-validation" novalidate>  
       <h3>
         Welcome User
         <i class="fa-solid fa-circle-user fa-lg"></i>
       </h3>
         <!-- gross_annual_income -->
-        <div class="form-group w-75">
+        <div class="form-group w-100">
             <label for="gross_annual_income" class="form-label">
               Enter gross annual income
               <i class="fas fa-question-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="Gross annual income is your total salary in a year before any deductions"></i>
             </label>
             <input type="text" id="gross_annual_income" class="form-control w-100 userInput" data-bs-toggle="tooltip" name="gross_annual_income" placeholder="Enter gross annual income" onfocusout="parseNumber(this)" required />
-            <div class="valid-feedback">Valid.</div>
             <div class="invalid-feedback">Please enter valid number.</div>
         </div>
         
-        <!-- extra_income -->
-       <div class="form-group w-75">
+       <!-- extra_income -->
+       <div class="form-group w-100">
             <label for="extra_income" class="form-label">
               Enter extra income
               <i class="fas fa-question-circle fa" data-bs-toggle="tooltip" data-bs-placement="top" title="It is your additional earnings beyond your primary source of income, often acquired through part-time jobs, freelancing, or investments."></i>
             </label>
             <input type="text" id="extra_income" class="form-control w-100 userInput" data-bs-toggle="tooltip" name="extra_income" placeholder="Enter extra income from other sources" onfocusout="parseNumber(this)" required />
-            <div class="valid-feedback">Valid.</div>
             <div class="invalid-feedback">Please enter valid number.</div>
           </div></div>
         </div>
        
        <!-- age_group -->
-          <div class="form-group w-75">
-            <label for="age_group" class="form-label">
-              Enter age group
-              <i class="fas fa-question-circle fa" data-bs-toggle="tooltip" data-bs-placement="top" title="select your age group from the dropdown"></i>
-            </label><br>
-            <select id="age_group" class="form-select" required>
-                <option value="">Select an option</option>
-                <option value="39">&lt; 40</option>
-                <option value="40">&ge; 40 &amp; &lt; 60</option>
-                <option value="61">&ge; 60</option>
-            </select>
-            <div class="valid-feedback">Valid.</div>
-            <div class="invalid-feedback">Please select an option.</div>
-          </div>
-          
-          <!-- applicable_deductions -->
-       <div class="form-group w-75">
+        <div class="form-group w-100">
+          <label for="age_group" class="form-label">
+            Enter age group
+            <i class="fas fa-question-circle fa" data-bs-toggle="tooltip" data-bs-placement="top" title="select your age group from the dropdown"></i>
+          </label><br>
+          <select id="age_group" class="form-select" required>
+              <option value="">Select an option</option>
+              <option value="39">&lt; 40</option>
+              <option value="40">&ge; 40 &amp; &lt; 60</option>
+              <option value="61">&ge; 60</option>
+          </select>
+          <div class="invalid-feedback">Please select an option.</div>
+        </div>
+        
+        <!-- applicable_deductions -->
+        <div class="form-group w-100">
             <label for="applicable_deductions" class="form-label">
               Enter total applicable deductions
               <i class="fas fa-question-circle fa" data-bs-toggle="tooltip" data-bs-placement="top" title="Deductions are allowable expenses or reductions in taxable income"></i>
             </label>
             <input type="text" id="applicable_deductions" class="form-control w-100 userInput" data-bs-toggle="tooltip" name="applicable_deductions" placeholder="Add total applicable deductions" onfocusout="parseNumber(this)" required />
-            <div class="valid-feedback">Valid.</div>
             <div class="invalid-feedback">Please enter valid number.</div>
-          </div></div>
         </div>
         
         <!-- Submit button -->
-       <button type="button" class="btn btn-primary w-75" onclick="submitForm()">Submit</button>
+        <button type="button" class="btn btn-primary w-100" onclick="submitForm()">Submit</button>
     </form>
 
     <!-- Modal -->
@@ -92,12 +85,10 @@
             <div class="modal-header">
               <h1 class="modal-title fs-5" id="dataModelLabel">Tax Calculation</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <p id="tax-info"></p>
-                </div>
-              <div class="modal-footer">
-              <button type="button" class="btn btn-info" data-bs-dismiss="modal">Close</button>
+            </div>
+            <div class="modal-body">
+              <p id="tax-info"></p>
+              <button type="button" class="btn btn-info float-right" data-bs-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
