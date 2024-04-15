@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
     <link rel="stylesheet" href="./main.css">
     <script src="./main.js"></script>
     <title>Tax-Calculator</title>
@@ -29,21 +28,22 @@
             <label for="gross_annual_income" class="form-label" data-bs-toggle="tooltip" data-bs-placement="top" title="Gross annual income is your total salary in a year before any deductions">Enter gross annual income</label>
             <input type="text" id="gross_annual_income" class="form-control w-100 userInput" data-bs-toggle="tooltip" name="gross_annual_income" placeholder="Enter gross annual income" onfocusout="parseNumber(this)" required />
             <div class="valid-feedback">Valid.</div>
-            <div class="invalid-feedback">Please fill out this field.</div>
+            <div class="invalid-feedback">Please enter valid number.</div>
         </div>
         
         <!-- extra_income -->
        <div class="form-group w-75">
-            <label for="extra_income" class="form-label">Enter extra income</label>
+            <label for="extra_income" class="form-label" data-bs-toggle="tooltip" data-bs-placement="top" title="It is your additional earnings beyond your primary source of income, often acquired through part-time jobs, freelancing, or investments.">Enter extra income</label>
             <input type="text" id="extra_income" class="form-control w-100 userInput" data-bs-toggle="tooltip" name="extra_income" placeholder="Enter extra income from other sources" onfocusout="parseNumber(this)" required />
             <div class="valid-feedback">Valid.</div>
-            <div class="invalid-feedback">Please fill out this field.</div>
+            <div class="invalid-feedback">Please enter valid number.</div>
+          </div></div>
         </div>
        
        <!-- age_group -->
           <div class="form-group w-75">
-            <label for="age_group" class="form-label">Enter age group</label><br>
-            <select id="age_group" class="form-select">
+            <label for="age_group" class="form-label" data-bs-toggle="tooltip" data-bs-placement="top" title="select your age group from the dropdown">Enter age group</label><br>
+            <select id="age_group" class="form-select" required>
                 <option value="">Select an option</option>
                 <option value="under_40">&lt; 40</option>
                 <option value="40_to_60">&ge; 40 &amp; &lt; 60</option>
@@ -55,16 +55,36 @@
           
           <!-- applicable_deductions -->
        <div class="form-group w-75">
-            <label for="applicable_deductions" class="form-label">Enter total applicable deductions</label>
+            <label for="applicable_deductions" class="form-label" data-bs-toggle="tooltip" data-bs-placement="top" title="Deductions are allowable expenses or reductions in taxable income">Enter total applicable deductions</label>
             <input type="text" id="applicable_deductions" class="form-control w-100 userInput" data-bs-toggle="tooltip" name="applicable_deductions" placeholder="Add total applicable deductions" onfocusout="parseNumber(this)" required />
             <div class="valid-feedback">Valid.</div>
-            <div class="invalid-feedback">Please fill out this field.</div>
+            <div class="invalid-feedback">Please enter valid number.</div>
+          </div></div>
         </div>
         
         <!-- Submit button -->
-       <button type="submit" class="btn btn-primary w-75">Submit</button>
+       <button type="submit" class="btn btn-primary w-75" onclick="submitForm()">Submit</button>
     </form>
+
+    <!-- Modal -->
+    <div class="modal fade" id="dataModel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="dataModelLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="dataModelLabel">Tax Calculation</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Understood</button>
+            </div>
+          </div>
+        </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    
 </body>
 </html>
+
